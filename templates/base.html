@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<img src="media/music-wallpaper.jpg" width=100% height=400 />
+
+<!...Links...>
+<a class = "nav-link" href = "/aboutus">AboutUs</a>
+<a class = "nav-link" href = "/movies">Movieslist</a>
+<a class = "nav-link" href = "/audio">Audiosongs</a>
+<a class = "nav-link" href = "/video">VideoSongs</a>
+<a class = "nav-link" href = "/contactus">ContactUs</a>
+<form class = "form-inline" action = "/search_list" method = GET>
+    <input class = "form-control mr-sm-2" type = "text" placeholder = "search songs" name = "query" value = '{{query.GET.get}}' >
+    <button class = "btn btn-success" type = "submit" >search</button>
+</form>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "container-fluid">
+    <h3>Songs in the Movie{{m.title}},Director:{{m.director}}</h3>
+    <h4>video songs</h4>
+
+    {% for i in vlst %}
+
+    {% if m.title == i.Movie.title %}
+
+    <li>{{i.title}}</li>
+
+    {% endif %}
+
+    {% endfor %}
+</div>
+{% endblock %}

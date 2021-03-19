@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid" >
+        <h3 style = "text-align.center" ;>All Audio Songs List</h3>
+        <table width = 100% border = 1 >
+
+                {% for i in alist %}
+
+                <tr>
+                        <td width = 50%>
+                                Movie = {{i.Movie.title}} <br>
+                                Director = {{i.Movie.director}} <br>
+                                Year of release = {{i.Movie.year}} <br>
+                                <img src = "{{i.movie.photo.url}}" width = 200 height = 200 />
+                        </td>
+
+                        <td width = 50%>
+                                Title = {{i.title}} <br>
+                                Genre = {% if i.genre == 'H' %} Happy
+                                {% elif i.genre == 'D' %} Devotional
+                                {% elif i.genre == 'S' %} Sad
+                                {% elif i.genre == 'C' %} Classic
+                                {% else %} Melody
+                                {% endif %} <br>
+                                <! code for playing or downloading the song>
+                                <div style = "text-align:center">
+                                        <audio controls width=300 height=200 >
+                                                <source src = "media/{{i.song}}"/>
+                                        </audio>
+                                        <a href = "media/{{i.song}}" download> <br>
+                                                <button> Download audio </button>
+                                        </a>
+                                </div>
+                        </td>
+                </tr>
+
+                {% endfor %}
+
+        </table>
+</div>
+
+{% endblock %}
